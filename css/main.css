@@ -17,20 +17,24 @@
     content: '';
 }
 /*header*/
-nav
+header>nav
 {
     height: 50px;
 
     background: rgba(0,0,0,.1);
+    z-index:3;
+    position: relative;
     /*background: #ccc;*/
 }
 #banner
 {
     height: 800px;
 }
+
+/*导航栏*/
 header
 {
-    background: rgba(0,0,0,.2);
+    background: rgba(0,0,0,0.2);
 }
 ul
 {
@@ -75,6 +79,53 @@ nav .logo a
     letter-spacing: 1px;
 
     color: #fff;
+}
+/*导航栏*/
+
+/*滑动导航栏*/
+.scroll-nav
+{
+	position: fixed;
+	width: 100%;
+    visibility:hidden;
+    opacity:0;
+    z-index:3;
+}
+.scroll-nav>nav
+{
+    background: #333333;
+    height: 50px;
+
+}
+
+/*渐显效果*/
+.trans-fadeout{
+    -webkit-transition:all 0.5s linear;
+    -moz-transition:all 0.5s linear;
+    -ms-transition:all 0.5s linear;
+    -o-transition:all 0.5s linear;
+    transition:all 0.5s linear;
+}
+/*滑动导航栏*/
+
+/*点击右侧菜单*/
+.click-sidebar{
+    position: fixed;
+    width: 300px;
+    height: 100%;
+    right: -300px;
+    top: 0px;
+    background: wheat;
+    z-index: 2;
+}
+/*点击右侧菜单*/
+
+#content
+{
+    position:relative;
+
+    /*小于滚动条的z轴坐标，文本被覆盖*/
+    z-index:1
 }
 #banner .inner
 {
